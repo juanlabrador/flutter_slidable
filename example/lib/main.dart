@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
+Widget icon = Image.asset('assets/ic_phone.png', width: 24);
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -28,27 +30,27 @@ class MyApp extends StatelessWidget {
                 dismissible: DismissiblePane(onDismissed: () {}),
 
                 // All actions are defined in the children parameter.
-                children: const [
+                children: [
                   // A SlidableAction can have an icon and/or a label.
                   SlidableAction(
                     onPressed: doNothing,
                     backgroundColor: Color(0xFFFE4A49),
                     foregroundColor: Colors.white,
-                    icon: Icons.delete,
+                    icon: Image.asset('assets/ic_phone.png'),
                     label: 'Delete',
                   ),
                   SlidableAction(
                     onPressed: doNothing,
                     backgroundColor: Color(0xFF21B7CA),
                     foregroundColor: Colors.white,
-                    icon: Icons.share,
+                    icon: Image.asset('assets/ic_phone.png', width: 24),
                     label: 'Share',
                   ),
                 ],
               ),
 
               // The end action pane is the one at the right or the bottom side.
-              endActionPane: const ActionPane(
+              endActionPane: ActionPane(
                 motion: ScrollMotion(),
                 children: [
                   SlidableAction(
@@ -57,14 +59,14 @@ class MyApp extends StatelessWidget {
                     onPressed: doNothing,
                     backgroundColor: Color(0xFF7BC043),
                     foregroundColor: Colors.white,
-                    icon: Icons.archive,
+                    icon: Image.asset('assets/ic_phone.png', width: 24),
                     label: 'Archive',
                   ),
                   SlidableAction(
                     onPressed: doNothing,
                     backgroundColor: Color(0xFF0392CF),
                     foregroundColor: Colors.white,
-                    icon: Icons.save,
+                    icon: Image.asset('assets/ic_phone.png', width: 24),
                     label: 'Save',
                   ),
                 ],
@@ -79,7 +81,7 @@ class MyApp extends StatelessWidget {
               key: const ValueKey(1),
 
               // The start action pane is the one at the left or the top side.
-              startActionPane: const ActionPane(
+              startActionPane:  ActionPane(
                 // A motion is a widget used to control how the pane animates.
                 motion: ScrollMotion(),
 
@@ -90,14 +92,14 @@ class MyApp extends StatelessWidget {
                     onPressed: doNothing,
                     backgroundColor: Color(0xFFFE4A49),
                     foregroundColor: Colors.white,
-                    icon: Icons.delete,
+                    icon: Image.asset('assets/ic_phone.png', width: 24),
                     label: 'Delete',
                   ),
                   SlidableAction(
                     onPressed: doNothing,
                     backgroundColor: Color(0xFF21B7CA),
                     foregroundColor: Colors.white,
-                    icon: Icons.share,
+                    icon: Image.asset('assets/ic_phone.png', width: 24),
                     label: 'Share',
                   ),
                 ],
@@ -107,21 +109,21 @@ class MyApp extends StatelessWidget {
               endActionPane: ActionPane(
                 motion: const ScrollMotion(),
                 dismissible: DismissiblePane(onDismissed: () {}),
-                children: const [
+                children:  [
                   SlidableAction(
                     // An action can be bigger than the others.
                     flex: 2,
                     onPressed: doNothing,
                     backgroundColor: Color(0xFF7BC043),
                     foregroundColor: Colors.white,
-                    icon: Icons.archive,
+                    icon: Image.asset('assets/ic_phone.png', width: 24),
                     label: 'Archive',
                   ),
                   SlidableAction(
                     onPressed: doNothing,
                     backgroundColor: Color(0xFF0392CF),
                     foregroundColor: Colors.white,
-                    icon: Icons.save,
+                    icon: Image.asset('assets/ic_phone.png', width: 24),
                     label: 'Save',
                   ),
                 ],

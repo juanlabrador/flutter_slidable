@@ -34,8 +34,12 @@ void main() {
                   ),
                   motion: const BehindMotion(),
                   children: [
-                    SlidableAction(onPressed: (_) {}, icon: Icons.share),
-                    SlidableAction(onPressed: (_) {}, icon: Icons.delete),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
                   ],
                 ),
                 child: const SizedBox.expand(),
@@ -77,8 +81,12 @@ void main() {
                   ),
                   motion: const BehindMotion(),
                   children: [
-                    SlidableAction(onPressed: (_) {}, icon: Icons.share),
-                    SlidableAction(onPressed: (_) {}, icon: Icons.delete),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
                   ],
                 ),
                 child: const SizedBox.expand(),
@@ -124,8 +132,12 @@ void main() {
                   ),
                   motion: const BehindMotion(),
                   children: [
-                    SlidableAction(onPressed: (_) {}, icon: Icons.share),
-                    SlidableAction(onPressed: (_) {}, icon: Icons.delete),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
                   ],
                 ),
                 child: const SizedBox.expand(),
@@ -174,8 +186,12 @@ void main() {
                   ),
                   motion: const BehindMotion(),
                   children: [
-                    SlidableAction(onPressed: (_) {}, icon: Icons.share),
-                    SlidableAction(onPressed: (_) {}, icon: Icons.delete),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
                   ],
                 ),
                 child: const SizedBox.expand(),
@@ -226,8 +242,12 @@ void main() {
                   ),
                   motion: const BehindMotion(),
                   children: [
-                    SlidableAction(onPressed: (_) {}, icon: Icons.share),
-                    SlidableAction(onPressed: (_) {}, icon: Icons.delete),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
                   ],
                 ),
                 child: const SizedBox.expand(),
@@ -282,8 +302,12 @@ void main() {
                   ),
                   motion: const BehindMotion(),
                   children: [
-                    SlidableAction(onPressed: (_) {}, icon: Icons.share),
-                    SlidableAction(onPressed: (_) {}, icon: Icons.delete),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
                   ],
                 ),
                 child: const SizedBox.expand(),
@@ -340,8 +364,12 @@ void main() {
                   ),
                   motion: const BehindMotion(),
                   children: [
-                    SlidableAction(onPressed: (_) {}, icon: Icons.share),
-                    SlidableAction(onPressed: (_) {}, icon: Icons.delete),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
+                    SlidableAction(
+                        onPressed: (_) {},
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
                   ],
                 ),
                 child: Builder(

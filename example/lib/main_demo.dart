@@ -53,20 +53,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 key: const ValueKey(1),
                 groupTag: '0',
                 direction: direction,
-                startActionPane: const ActionPane(
+                startActionPane:  ActionPane(
                   openThreshold: 0.1,
                   closeThreshold: 0.4,
                   motion: BehindMotion(),
                   children: [
-                    SlideAction(color: Colors.green, icon: Icons.share),
-                    SlideAction(color: Colors.amber, icon: Icons.delete),
+                    SlideAction(color: Colors.green, icon:Image.asset('assets/ic_phone.png', width: 24)),
+                    SlideAction(color: Colors.amber, icon: Image.asset('assets/ic_phone.png', width: 24)),
                   ],
                 ),
-                endActionPane: const ActionPane(
+                endActionPane:  ActionPane(
                   motion: BehindMotion(),
                   children: [
-                    SlideAction(color: Colors.red, icon: Icons.delete_forever),
-                    SlideAction(color: Colors.blue, icon: Icons.alarm, flex: 2),
+                    SlideAction(color: Colors.red, icon: Image.asset('assets/ic_phone.png', width: 24)),
+                    SlideAction(color: Colors.blue, icon: Image.asset('assets/ic_phone.png', width: 24), flex: 2),
                   ],
                 ),
                 child: const Tile(color: Colors.grey, text: 'hello'),
@@ -76,37 +76,47 @@ class _MyHomePageState extends State<MyHomePage> {
               key: const ValueKey(2),
               groupTag: '0',
               direction: direction,
-              startActionPane: const ActionPane(
+              startActionPane: ActionPane(
                 motion: StretchMotion(),
                 children: [
-                  SlideAction(color: Colors.green, icon: Icons.share),
-                  SlideAction(color: Colors.amber, icon: Icons.delete),
+                  SlideAction(color: Colors.green,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
+                  SlideAction(color: Colors.amber,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
                 ],
               ),
-              endActionPane: const ActionPane(
+              endActionPane:  ActionPane(
                 motion: StretchMotion(),
                 children: [
-                  SlideAction(color: Colors.red, icon: Icons.delete_forever),
-                  SlideAction(color: Colors.blue, icon: Icons.alarm, flex: 3),
+                  SlideAction(color: Colors.red,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
+                  SlideAction(color: Colors.blue,
+                      icon: Image.asset('assets/ic_phone.png', width: 24),
+                      flex: 3),
                 ],
               ),
               child: const Tile(color: Colors.pink, text: 'hello 2'),
             ),
             Slidable(
-              key: const ValueKey(3),
+              key: ValueKey(3),
               direction: direction,
-              startActionPane: const ActionPane(
+              startActionPane:  ActionPane(
                 motion: ScrollMotion(),
                 children: [
-                  SlideAction(color: Colors.green, icon: Icons.share),
-                  SlideAction(color: Colors.amber, icon: Icons.delete),
+                  SlideAction(color: Colors.green,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
+                  SlideAction(color: Colors.amber,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
                 ],
               ),
-              endActionPane: const ActionPane(
+              endActionPane: ActionPane(
                 motion: ScrollMotion(),
                 children: [
-                  SlideAction(color: Colors.red, icon: Icons.delete_forever),
-                  SlideAction(color: Colors.blue, icon: Icons.alarm, flex: 2),
+                  SlideAction(color: Colors.red,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
+                  SlideAction(color: Colors.blue,
+                      icon: Image.asset('assets/ic_phone.png', width: 24),
+                      flex: 2),
                 ],
               ),
               child: const Tile(color: Colors.yellow, text: 'hello 3'),
@@ -126,41 +136,46 @@ class _MyHomePageState extends State<MyHomePage> {
                     closeOnCancel: true,
                     confirmDismiss: () async {
                       return await showDialog<bool>(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                title: const Text('Are you sure?'),
-                                content: const Text('Are you sure to dismiss?'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop(true);
-                                    },
-                                    child: const Text('Yes'),
-                                  ),
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop(false);
-                                    },
-                                    child: const Text('No'),
-                                  ),
-                                ],
-                              );
-                            },
-                          ) ??
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: const Text('Are you sure?'),
+                            content: const Text('Are you sure to dismiss?'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop(true);
+                                },
+                                child: const Text('Yes'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop(false);
+                                },
+                                child: const Text('No'),
+                              ),
+                            ],
+                          );
+                        },
+                      ) ??
                           false;
                     },
                   ),
-                  children: const [
-                    SlideAction(color: Colors.green, icon: Icons.share),
-                    SlideAction(color: Colors.amber, icon: Icons.delete),
+                  children: [
+                    SlideAction(color: Colors.green,
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
+                    SlideAction(color: Colors.amber,
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
                   ],
                 ),
-                endActionPane: const ActionPane(
+                endActionPane: ActionPane(
                   motion: DrawerMotion(),
                   children: [
-                    SlideAction(color: Colors.red, icon: Icons.delete_forever),
-                    SlideAction(color: Colors.blue, icon: Icons.alarm, flex: 2),
+                    SlideAction(color: Colors.red,
+                        icon: Image.asset('assets/ic_phone.png', width: 24)),
+                    SlideAction(color: Colors.blue,
+                        icon: Image.asset('assets/ic_phone.png', width: 24),
+                        flex: 2),
                   ],
                 ),
                 child: const Tile(color: Colors.lime, text: 'hello 4'),
@@ -168,18 +183,23 @@ class _MyHomePageState extends State<MyHomePage> {
             Slidable(
               key: const ValueKey(5),
               direction: direction,
-              startActionPane: const ActionPane(
+              startActionPane: ActionPane(
                 motion: BehindMotion(),
                 children: [
-                  SlideAction(color: Colors.green, icon: Icons.share),
-                  SlideAction(color: Colors.amber, icon: Icons.delete),
+                  SlideAction(color: Colors.green,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
+                  SlideAction(color: Colors.amber,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
                 ],
               ),
-              endActionPane: const ActionPane(
+              endActionPane: ActionPane(
                 motion: BehindMotion(),
                 children: [
-                  SlideAction(color: Colors.red, icon: Icons.delete_forever),
-                  SlideAction(color: Colors.blue, icon: Icons.alarm, flex: 2),
+                  SlideAction(color: Colors.red,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
+                  SlideAction(color: Colors.blue,
+                      icon: Image.asset('assets/ic_phone.png', width: 24),
+                      flex: 2),
                 ],
               ),
               child: const Tile(color: Colors.grey, text: 'hello'),
@@ -187,18 +207,23 @@ class _MyHomePageState extends State<MyHomePage> {
             Slidable(
               key: const ValueKey(6),
               direction: direction,
-              startActionPane: const ActionPane(
+              startActionPane: ActionPane(
                 motion: BehindMotion(),
                 children: [
-                  SlideAction(color: Colors.green, icon: Icons.share),
-                  SlideAction(color: Colors.amber, icon: Icons.delete),
+                  SlideAction(color: Colors.green,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
+                  SlideAction(color: Colors.amber,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
                 ],
               ),
-              endActionPane: const ActionPane(
+              endActionPane: ActionPane(
                 motion: BehindMotion(),
                 children: [
-                  SlideAction(color: Colors.red, icon: Icons.delete_forever),
-                  SlideAction(color: Colors.blue, icon: Icons.alarm, flex: 2),
+                  SlideAction(color: Colors.red,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
+                  SlideAction(color: Colors.blue,
+                      icon: Image.asset('assets/ic_phone.png', width: 24),
+                      flex: 2),
                 ],
               ),
               child: const Tile(color: Colors.grey, text: 'hello'),
@@ -206,18 +231,23 @@ class _MyHomePageState extends State<MyHomePage> {
             Slidable(
               key: const ValueKey(7),
               direction: direction,
-              startActionPane: const ActionPane(
+              startActionPane: ActionPane(
                 motion: BehindMotion(),
                 children: [
-                  SlideAction(color: Colors.green, icon: Icons.share),
-                  SlideAction(color: Colors.amber, icon: Icons.delete),
+                  SlideAction(color: Colors.green,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
+                  SlideAction(color: Colors.amber,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
                 ],
               ),
-              endActionPane: const ActionPane(
+              endActionPane: ActionPane(
                 motion: BehindMotion(),
                 children: [
-                  SlideAction(color: Colors.red, icon: Icons.delete_forever),
-                  SlideAction(color: Colors.blue, icon: Icons.alarm, flex: 2),
+                  SlideAction(color: Colors.red,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
+                  SlideAction(color: Colors.blue,
+                      icon: Image.asset('assets/ic_phone.png', width: 24),
+                      flex: 2),
                 ],
               ),
               child: const Tile(color: Colors.grey, text: 'hello'),
@@ -225,18 +255,23 @@ class _MyHomePageState extends State<MyHomePage> {
             Slidable(
               key: const ValueKey(8),
               direction: direction,
-              startActionPane: const ActionPane(
+              startActionPane: ActionPane(
                 motion: BehindMotion(),
                 children: [
-                  SlideAction(color: Colors.green, icon: Icons.share),
-                  SlideAction(color: Colors.amber, icon: Icons.delete),
+                  SlideAction(color: Colors.green,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
+                  SlideAction(color: Colors.amber,
+                      icon: Image.asset('assets/ic_phone.png', width: 24)),
                 ],
               ),
-              endActionPane: const ActionPane(
+              endActionPane: ActionPane(
                 motion: BehindMotion(),
                 children: [
-                  SlideAction(color: Colors.red, icon: Icons.delete_forever),
-                  SlideAction(color: Colors.blue, icon: Icons.alarm, flex: 2),
+                SlideAction(color: Colors.red,
+                icon: Image.asset('assets/ic_phone.png', width: 24)),
+                SlideAction(color: Colors.blue,
+                    icon: Image.asset('assets/ic_phone.png', width: 24),
+                    flex: 2),
                 ],
               ),
               child: const Tile(color: Colors.grey, text: 'hello'),
@@ -257,7 +292,7 @@ class SlideAction extends StatelessWidget {
   }) : super(key: key);
 
   final Color color;
-  final IconData icon;
+  final Widget icon;
   final int flex;
 
   @override
@@ -323,7 +358,9 @@ class _ActionTypeListenerState extends State<ActionTypeListener> {
   @override
   void initState() {
     super.initState();
-    _actionPaneTypeValueNotifier = Slidable.of(context)?.actionPaneType;
+    _actionPaneTypeValueNotifier = Slidable
+        .of(context)
+        ?.actionPaneType;
     _actionPaneTypeValueNotifier?.addListener(_onActionPaneTypeChanged);
   }
 

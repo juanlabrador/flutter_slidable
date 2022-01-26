@@ -80,7 +80,7 @@ void main() {
             children: [
               SlidableAction(
                 onPressed: (_) => logs.add('pressed'),
-                icon: Icons.ac_unit,
+                icon: Image.asset('assets/ic_phone.png', width: 24),
               )
             ],
           ),
@@ -99,7 +99,7 @@ void main() {
             children: [
               SlidableAction(
                 onPressed: (_) => logs.add('pressed'),
-                icon: Icons.ac_unit,
+                icon: Image.asset('assets/ic_phone.png', width: 24),
                 label: 'my_label',
               )
             ],

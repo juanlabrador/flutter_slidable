@@ -7,15 +7,16 @@ void main() {
   runApp(MyApp());
 }
 
-const actions = [
+var actions = [
   SlideAction(
     color: Color(0xFFFE4A49),
-    icon: Icons.delete,
+    icon: Image.asset('assets/ic_phone.png'),
     label: 'Delete',
   ),
   SlideAction(
     color: Color(0xFF21B7CA),
-    icon: Icons.share,
+    icon: Image.asset('assets/ic_phone.png',
+        width: 24),
     label: 'Share',
   ),
 ];
@@ -207,7 +208,7 @@ class SlideAction extends StatelessWidget {
   }) : super(key: key);
 
   final Color color;
-  final IconData icon;
+  final Widget icon;
   final int flex;
   final String label;
 
