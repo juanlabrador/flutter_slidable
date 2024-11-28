@@ -18,7 +18,8 @@ class Slidable extends StatefulWidget {
   /// The [enabled], [closeOnScroll], [direction], [dragStartBehavior],
   /// [useTextDirection] and [child] arguments must not be null.
   const Slidable({
-    Key? key,
+    super.key,
+    this.controller,
     this.groupTag,
     this.enabled = true,
     this.closeOnScroll = true,
@@ -28,7 +29,10 @@ class Slidable extends StatefulWidget {
     this.dragStartBehavior = DragStartBehavior.down,
     this.useTextDirection = true,
     required this.child,
-  }) : super(key: key);
+  });
+
+  /// The Slidable widget controller.
+  final SlidableController? controller;
 
   /// Whether this slidable is interactive.
   ///
@@ -134,7 +138,7 @@ class _SlidableState extends State<Slidable>
   @override
   void initState() {
     super.initState();
-    controller = SlidableController(this)
+    controller = (widget.controller ?? SlidableController(this))
       ..actionPaneType.addListener(handleActionPanelTypeChanged);
   }
 
@@ -149,6 +153,14 @@ class _SlidableState extends State<Slidable>
   @override
   void didUpdateWidget(covariant Slidable oldWidget) {
     super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.controller != widget.controller) {
+      controller.actionPaneType.removeListener(handleActionPanelTypeChanged);
+
+      controller = (widget.controller ?? SlidableController(this))
+        ..actionPaneType.addListener(handleActionPanelTypeChanged);
+    }
+
     updateIsLeftToRight();
     updateController();
   }
@@ -156,7 +168,10 @@ class _SlidableState extends State<Slidable>
   @override
   void dispose() {
     controller.actionPaneType.removeListener(handleActionPanelTypeChanged);
-    controller.dispose();
+
+    if (controller != widget.controller) {
+      controller.dispose();
+    }
     super.dispose();
   }
 
@@ -213,6 +228,7 @@ class _SlidableState extends State<Slidable>
   }
 
   ActionPane? get startActionPane => widget.startActionPane;
+
   ActionPane? get endActionPane => widget.endActionPane;
 
   Alignment get actionPaneAlignment {
@@ -286,10 +302,9 @@ class _SlidableState extends State<Slidable>
 
 class _SlidableControllerScope extends InheritedWidget {
   const _SlidableControllerScope({
-    Key? key,
     required this.controller,
-    required Widget child,
-  }) : super(key: key, child: child);
+    required super.child,
+  });
 
   final SlidableController? controller;
 

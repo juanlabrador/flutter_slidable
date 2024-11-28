@@ -1,3 +1,45 @@
+## 3.1.1
+
+### Fixed
+* An issue when having only one action pane set [#311](https://github.com/letsar/flutter_slidable/issues/311)
+* An issue with delete threshold [#230](https://github.com/letsar/flutter_slidable/issues/230) 
+
+## 3.1.0
+
+### Added
+* A way to provide a controller to the Slidable.
+  
+## 3.0.1
+
+## Changed
+* Remove deprecation use of `primary` and `surface` parameters from OutlinedButton.styleFrom method. (See https://github.com/letsar/flutter_slidable/pull/443)
+
+## 3.0.0
+
+### Changed
+* Minimum version of Flutter (3.7.0 now)
+
+## 2.0.0
+### Changed
+* Minimum version of Flutter (3.0.0 now) and Dart (2.17.0 now).
+
+## 1.3.2
+### Fixed
+* ClipBehavior.none issue (https://github.com/letsar/flutter_slidable/issues/361).
+
+## 1.3.1
+### Fixed
+* Rare LateInitializationError with DrawerMotion (https://github.com/letsar/flutter_slidable/issues/289).
+* Issue with shadow content (https://github.com/letsar/flutter_slidable/issues/279).
+
+## 1.3.0
+### Added
+* Padding and BorderRadius to SlidableAction.
+
+## 1.2.1
+### Fixed
+* Build warning
+
 ## 1.2.0
 ### Added
 * A way to automatically close other Slidables within the same group by tapping on them.

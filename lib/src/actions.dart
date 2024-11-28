@@ -18,15 +18,16 @@ class CustomSlidableAction extends StatelessWidget {
   ///
   /// The [flex] argument must also be greater than 0.
   const CustomSlidableAction({
-    Key? key,
+    super.key,
     this.flex = _kFlex,
     this.backgroundColor = _kBackgroundColor,
     this.foregroundColor,
     this.autoClose = _kAutoClose,
+    this.borderRadius = BorderRadius.zero,
+    this.padding,
     required this.onPressed,
     required this.child,
-  })  : assert(flex > 0),
-        super(key: key);
+  }) : assert(flex > 0);
 
   /// {@template slidable.actions.flex}
   /// The flex factor to use for this child.
@@ -66,6 +67,18 @@ class CustomSlidableAction extends StatelessWidget {
   /// {@endtemplate}
   final SlidableActionCallback? onPressed;
 
+  /// {@template slidable.actions.borderRadius}
+  /// The borderRadius of this action
+  ///
+  /// Defaults to [BorderRadius.zero].
+  /// {@endtemplate}
+  final BorderRadius borderRadius;
+
+  /// {@template slidable.actions.padding}
+  /// The padding of the OutlinedButton
+  /// {@endtemplate}
+  final EdgeInsets? padding;
+
   /// Typically the action's icon or label.
   final Widget child;
 
@@ -83,10 +96,13 @@ class CustomSlidableAction extends StatelessWidget {
         child: OutlinedButton(
           onPressed: () => _handleTap(context),
           style: OutlinedButton.styleFrom(
+            padding: padding,
             backgroundColor: backgroundColor,
+            disabledForegroundColor: effectiveForegroundColor.withOpacity(0.38),
             foregroundColor: effectiveForegroundColor,
-            surfaceTintColor: effectiveForegroundColor,
-            shape: const RoundedRectangleBorder(),
+            shape: RoundedRectangleBorder(
+              borderRadius: borderRadius,
+            ),
             side: BorderSide.none,
           ),
           child: child,
@@ -114,7 +130,7 @@ class SlidableAction extends StatelessWidget {
   ///
   /// The [flex] argument must also be greater than 0.
   const SlidableAction({
-    Key? key,
+    super.key,
     this.flex = _kFlex,
     this.backgroundColor = _kBackgroundColor,
     this.foregroundColor,
@@ -124,9 +140,10 @@ class SlidableAction extends StatelessWidget {
     this.spacing = 4,
     this.label,
     this.styleLabel,
+    this.borderRadius = BorderRadius.zero,
+    this.padding,
   })  : assert(flex > 0),
-        assert(icon != null || label != null),
-        super(key: key);
+        assert(icon != null || label != null);
 
   /// {@macro slidable.actions.flex}
   final int flex;
@@ -155,6 +172,12 @@ class SlidableAction extends StatelessWidget {
   final String? label;
 
   final TextStyle? styleLabel;
+
+  /// Padding of the OutlinedButton
+  final BorderRadius borderRadius;
+
+  /// Padding of the OutlinedButton
+  final EdgeInsets? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -196,6 +219,8 @@ class SlidableAction extends StatelessWidget {
           );
 
     return CustomSlidableAction(
+      borderRadius: borderRadius,
+      padding: padding,
       onPressed: onPressed,
       autoClose: autoClose,
       backgroundColor: backgroundColor,

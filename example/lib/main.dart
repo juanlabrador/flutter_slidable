@@ -5,10 +5,17 @@ Widget icon = Image.asset('assets/ic_phone.png', width: 24);
 
 void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
+  late final controller = SlidableController(this);
 
   @override
   Widget build(BuildContext context) {
@@ -56,15 +63,15 @@ class MyApp extends StatelessWidget {
                   SlidableAction(
                     // An action can be bigger than the others.
                     flex: 2,
-                    onPressed: doNothing,
-                    backgroundColor: Color(0xFF7BC043),
+                    onPressed: (_) => controller.openEndActionPane(),
+                    backgroundColor: const Color(0xFF7BC043),
                     foregroundColor: Colors.white,
                     icon: Image.asset('assets/ic_phone.png', width: 24),
                     label: 'Archive',
                   ),
                   SlidableAction(
-                    onPressed: doNothing,
-                    backgroundColor: Color(0xFF0392CF),
+                    onPressed: (_) => controller.close(),
+                    backgroundColor: const Color(0xFF0392CF),
                     foregroundColor: Colors.white,
                     icon: Image.asset('assets/ic_phone.png', width: 24),
                     label: 'Save',
@@ -77,6 +84,7 @@ class MyApp extends StatelessWidget {
               child: const ListTile(title: Text('Slide me')),
             ),
             Slidable(
+              controller: controller,
               // Specify a key if the Slidable is dismissible.
               key: const ValueKey(1),
 
